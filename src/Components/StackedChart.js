@@ -16,10 +16,14 @@ const StackedChart = () => {
       type: 'area'
     },
     fill: {
-        type: 'solid',
-      },
+      type: 'solid',
+    },
 
     colors: ['#000', '#ff0000'], //arrays used to set the color to black and red respectively
+    grid: {
+      show: 'false',
+      borderColor: 'transparent', //removes grid lines
+    },
 
     dataLabels: {
       enabled: false
@@ -29,36 +33,49 @@ const StackedChart = () => {
     },
     xaxis: {
       type: 'string',
-      categories: ["FY16","FY17","FY18","FY19","FY20","FY21","FY22","FY23","FY24"]
+      categories: ["FY16", "FY17", "FY18", "FY19", "FY20", "FY21", "FY22", "FY23", "FY24"]
     },
     yaxis: {
+      show: true,
+      tickAmount: 4,
+      min: 0,
+      max: 80,
+      axisBorder: {
+        show: 'true',
+        color: '#000000',
+        height: '100%',
+        width: 1,
+      },
+      axisTicks: {
         show: true,
-        tickAmount: 4,
-        min: 0,
-        max: 80},
+        borderType: 'solid',
+        color: '#78909C',
+      },
+    },
     tooltip: {
       x: {
         format: 'dd/MM/yy HH:mm'
       },
     },
     legend: {
-        width: 700,
-        fontSize: '15px',
-        markers: {
-            shape: 'line',
-            width: 25,
-            height: 2,
-            // strokeWidth: null,
-            radius: 0,
-            offsetX: 0,
-            offsetY: 0
-        },}
+      width: 700,
+      fontSize: '15px',
+      markers: {
+        shape: 'line',
+        width: 25,
+        height: 2,
+        // strokeWidth: null,
+        radius: 0,
+        offsetX: 0,
+        offsetY: 0
+      },
+    }
   });
 
 
   return (
     <div id="chart">
-      <ReactApexChart options={options} series={series} type="area" height={350} width={700}/>
+      <ReactApexChart options={options} series={series} type="area" height={350} width={700} />
     </div>
   );
 };

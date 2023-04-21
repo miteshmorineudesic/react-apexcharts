@@ -75,6 +75,7 @@ const GradientLineChart = () => {
                 height: 1,
                 width: '100%',
             },
+            
         },
 
         grid: {

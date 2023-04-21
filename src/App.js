@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import GradientLineChart from './Components/GradientLineChart'
 import React from 'react';
 import StackedChart from './Components/StackedChart';
+import ConsumerCategoriesBar from './Components/ConsumerCategoriesBar';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
     {/* <GradientLineChart/> */}
     <StackedChart/>
+    <ConsumerCategoriesBar/>
     </div>
   );
 }
