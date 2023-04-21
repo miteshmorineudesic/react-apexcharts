@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-const ApexChart = () => {
+const GradientLineChart = () => {
     const [series, setSeries] = useState([
         {
             name: "Public",
@@ -129,4 +129,4 @@ const ApexChart = () => {
     );
 };
 
-export default ApexChart;
+export default GradientLineChart;

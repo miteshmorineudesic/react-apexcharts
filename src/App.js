@@ -1,15 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
-import ApexChart from './Components/GradientLineChart'
+import GradientLineChart from './Components/GradientLineChart'
 import React from 'react';
+import StackedChart from './Components/StackedChart';
 
 
 function App() {
   
   return (
     <div className="App">
-    <ApexChart/>
+    {/* <GradientLineChart/> */}
+    <StackedChart/>
     </div>
   );
 }
