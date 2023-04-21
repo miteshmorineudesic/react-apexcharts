@@ -6,7 +6,7 @@ const ApexChart = () => {
         {
             name: "Public",
             data: [2, 0, 3, 7, 2, 5, 7, 14.5, 14],
-
+           
         },
         {
             name: "Private",
@@ -27,7 +27,8 @@ const ApexChart = () => {
         },
         forecastDataPoints: {
             count: 2, // last three datapoints will be dotted
-        }, dataLabels: {
+        }, 
+        dataLabels: {    //label on chart line
             enabled: true,
             enabledOnSeries: undefined,
             formatter: function (val, opts) {
@@ -38,7 +39,7 @@ const ApexChart = () => {
             offsetX: 0,
             offsetY: 0,
             style: {
-                fontSize: '14px',
+                fontSize: '15px',
                 fontFamily: 'Helvetica, Arial, sans-serif',
                 fontWeight: '',
                 colors: undefined
@@ -68,9 +69,24 @@ const ApexChart = () => {
             tickAmount: 10,
             labels: {
                 show: true,
-                rotate: 45,
-              },
-              rotateAlways: true,
+                rotate: -90,
+                rotateAlways: true,
+                hideOverlappingLabels: true,
+                showDuplicates: false,
+                trim: false,
+                minHeight: undefined,
+                minWidth: 100,
+                maxHeight: 120,
+                style: {
+                    colors: [],
+                    fontSize: '15px',
+                    fontFamily: 'Helvetica, Arial, sans-serif',
+                    fontWeight: 400,
+                    cssClass: 'apexcharts-xaxis-label',
+                },
+            },
+        
+          
         },
         yaxis: {
             labels: {
@@ -85,7 +101,31 @@ const ApexChart = () => {
             colors: "red"
         },
 
-        colors: ['#000', '#ff0000'] //arrays used to set the color to black and red respectively
+        colors: ['#000', '#ff0000'], //arrays used to set the color to black and red respectively
+
+        legend: {
+           
+            width: 700,
+            fontSize:'15px',
+            // other legend options
+            markers: {
+                shape:'line',
+                width: 25,
+                height: 2,
+                strokeWidth: 0,
+                // strokeColor: '#ff0000',
+                fillColors: undefined,
+                radius: 0,
+                customHTML: undefined,
+                onClick: undefined,
+                offsetX: 0,
+                offsetY: 0
+            },
+            itemMargin: {
+                horizontal: 100,
+                vertical: 0
+            },
+          }
 
     });
 
