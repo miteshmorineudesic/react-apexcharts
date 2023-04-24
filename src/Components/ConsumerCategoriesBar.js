@@ -87,28 +87,6 @@ const ConsumerCategoriesBar = () => {
               }
 
         },
-        // plotOptions: {
-        //     bar: {
-        //       horizontal: false,
-        //       columnWidth: '70%',
-        //       endingShape: 'flat',
-        //       dataLabels: {
-        //         position: 'top',
-        //       },
-        //     },
-        //   },
-        //   dataLabels: {
-        //     enabled: true,
-        //     formatter: (val, opts) => {
-        //       const cumVal = opts.w.globals.seriesCumulative[opts.seriesIndex][opts.dataPointIndex];
-        //       return cumVal.toFixed(2) + '%';
-        //     },
-        //     offsetY: -20,
-        //     style: {
-        //       fontSize: '12px',
-        //       colors: ['#304758'],
-        //     },
-        //   },
         fill: {
             opacity: 1,
         }, 
