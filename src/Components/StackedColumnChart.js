@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const ConsumerCategoriesBar = () => {
+const StackedColumnChart = () => {
     const [series] = useState([
         {
             name: 'Agriculture',
@@ -131,6 +131,8 @@ const ConsumerCategoriesBar = () => {
             <ReactApexChart options={options} series={series} type="bar" height={500} width={700} />
         </div>
     );
-};
+    };
+    
 
-export default ConsumerCategoriesBar;
+
+export default StackedColumnChart
