@@ -4,30 +4,34 @@ import ReactApexChart from 'react-apexcharts';
 const StackedColumnChart = () => {
     const [series] = useState([
         {
-            name: 'Agriculture',
-            data: [13, 14, 13, 13, 13, 13, 14, 13, 13, 13]
+            name: 'Others',
+            data: [32, 50, 140]
         },
         {
-            name: 'Industry',
-            data: [44, 42, 38, 35, 33, 31, 28, 27, 25, 23],
+            name: 'Inorganic',
+            data: [15, 25, 65],
         },
         {
-            name: 'Services',
-            data: [24, 24, 25, 27, 27, 28, 28, 29, 30, 31]
+            name: 'Pet-Chem',
+            data: [51, 90, 350]
         },
         {
-            name: 'Retail',
-            data: [19, 20, 24, 25, 27, 28, 30, 31, 32, 33],
+            name: 'Fertilizers',
+            data: [18, 25, 50]
+        },
+        {
+            name: 'Specially',
+            data: [60, 95, 250]
         },
     ]);
   
       
     const [options] = useState({
         chart: {
+            
             type: 'bar',
             height: 350,
             stacked: true,
-            stackType: '3D',
             toolbar: {
                 show: true
             },
@@ -47,16 +51,9 @@ const StackedColumnChart = () => {
         xaxis: {
 
             categories: [
-                "FY15",
-                "FY16",
-                "FY17",
-                "FY18",
-                "FY19",
-                "FY20",
-                "FY21",
-                "FY22",
-                "FY23",
-                "FY24",
+                "2021",
+                "2027",
+                "2040",
             ],
             axisBorder: {
                 show: 'true',
@@ -67,26 +64,10 @@ const StackedColumnChart = () => {
         },
         yaxis: {
             min: 0,
-            max: 100,
-
-            axisBorder: {
-                show: 'true',
-                color: '#000000',
-                height: 100,
-                width: 1,
-
-            },
-            axisTicks: {
-                show: true,
-                borderType: 'solid',
-                color: '#78909C',
-            },
+            max: 1000,
             labels: {
-                formatter: function (value) {
-                    return value + '%'; // add % sign to yaxis label
-                }
-            }
-
+                    show: false, // hide labels on y-axis
+                },
         },
         fill: {
             opacity: 1,
@@ -95,8 +76,18 @@ const StackedColumnChart = () => {
             show: 'false',
             borderColor: 'transparent', //removes grid lines
         },
-        colors: ['#5b9bd5', '#ed7d31', '#a5a5a5', '#fec100'], //arrays used to set the color to black and red respectively
-
+        colors:[ '#b3b3b3','#00a9fb','#2236ef', '#9be7f2','#0098b6'  ], //arrays used to set the color to black and red respectively
+        dataLabels: {
+            enabled: true,
+            // formatter: function (val) {
+            //   return val + "%";
+            // },
+            // offsetY: -20,
+            // style: {
+            //   fontSize: '12px',
+            //   colors: ["#304758"]
+            // }
+          },
         tooltip: {
             enabled: true,
             enabledOnSeries: undefined,
@@ -109,9 +100,25 @@ const StackedColumnChart = () => {
                 fontFamily: undefined,
             },
         },
+        legend: {
+            show: true,
+            position: 'left',
+            align: 'left', 
+            floating: false,
+            fontSize: '14px',
+            fontFamily: 'Helvetica, Arial',
+            // style: {
+            //     fontSize: '12px',
+            //     fontFamily: undefined,
+            // },
+            fontWeight: 400,
+            inverseOrder: true,
+        },
         plotOptions: {
             bar: {
               horizontal: false,
+              rangeBarGroupRows: true, // set to true to enable rangeBar
+              rangeBarOverlap: false, // set to false to have rangeBar side-by-side
               dataLabels: {
                 position: 'center',
                 formatter: function(val, opts) {
@@ -123,11 +130,11 @@ const StackedColumnChart = () => {
                   return cumulativeVal;
                 },
             }}}
-
     });
 
     return (
         <div id="chart">
+            <p>asheini</p>
             <ReactApexChart options={options} series={series} type="bar" height={500} width={700} />
         </div>
     );
