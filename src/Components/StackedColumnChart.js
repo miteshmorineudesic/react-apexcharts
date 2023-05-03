@@ -21,14 +21,14 @@ const StackedColumnChart = () => {
         },
         {
             name: 'Specialty',
-            data: [32, 60 , 165 ]
+            data: [32, 60, 165]
         },
     ]);
-  
-      
+
+
     const [options] = useState({
         chart: {
-            
+
             type: 'bar',
             height: 350,
             stacked: true,
@@ -66,8 +66,8 @@ const StackedColumnChart = () => {
             min: 0,
             max: 1000,
             labels: {
-                    show: false, // hide labels on y-axis
-                },
+                show: false, // hide labels on y-axis
+            },
         },
         fill: {
             opacity: 1,
@@ -76,8 +76,8 @@ const StackedColumnChart = () => {
             show: 'false',
             borderColor: 'transparent', //removes grid lines
         },
-        colors:[ '#b3b3b3','#00a9fb','#2236ef', '#9be7f2','#0098b6'  ],
-       
+        colors: ['#b3b3b3', '#00a9fb', '#2236ef', '#9be7f2', '#0098b6'],
+
         tooltip: {
             enabled: true,
             enabledOnSeries: undefined,
@@ -93,28 +93,86 @@ const StackedColumnChart = () => {
         legend: {
             show: true,
             position: 'left',
-            align: 'left', 
+            align: 'left',
             floating: false,
             fontSize: '14px',
             fontFamily: 'Helvetica, Arial',
             fontWeight: 400,
             inverseOrder: true,
+            onItemHover: {
+                highlightDataSeries: true
+              },
         },
         plotOptions: {
             bar: {
               dataLabels: {
                 enabled: true,
-                
                 total: {
+                  enabled: true,
+                  style: {
+                    fontSize: '13px',
+                    fontWeight: 900,
+                    fontWeight: 'bold',
+                    color: 'black'
+                  },
+                  background: {
                     enabled: true,
-                    style: {
-                      fontSize: '13px',
-                      fontWeight: 900
+                    foreColor: 'black',
+                    borderColor: 'black',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    opacity: 1,
+                    padding: {
+                      left: 8,
+                      right: 8,
+                      top: 4,
+                      bottom: 4
                     }
                   }
+                }
+              }
+            }
+          }
+,          
+        dataLabels: {
+            enabled: true,
+            enabledOnSeries: undefined,
+            formatter: function (val, opts) {
+                return val
             },
-           }},
-           
+            textAnchor: 'middle',
+            style: {
+                fontSize: '14px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 'bold',
+                colors: undefined
+            },
+            background: {
+                enabled: true,
+                padding: 4,
+                borderRadius: 0,
+                borderWidth: 0,
+                borderColor: '#fff',
+                opacity: 0.9,
+                dropShadow: {
+                    enabled: false,
+                    top: 1,
+                    left: 1,
+                    blur: 1,
+                    color: '#000',
+                    opacity: 0.45
+                }
+            },
+            dropShadow: {
+                enabled: false,
+                top: 1,
+                left: 1,
+                blur: 1,
+                color: '#ffffff',
+                opacity: 0.45
+            }
+        }
+
     });
 
     return (
@@ -122,8 +180,8 @@ const StackedColumnChart = () => {
             <ReactApexChart options={options} series={series} type="bar" height={500} width={700} />
         </div>
     );
-    };
-    
+};
+
 
 
 export default StackedColumnChart
