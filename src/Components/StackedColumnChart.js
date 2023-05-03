@@ -20,7 +20,7 @@ const StackedColumnChart = () => {
             data: [18, 25, 50]
         },
         {
-            name: 'Specially',
+            name: 'Specialty',
             data: [60, 95, 250]
         },
     ]);
@@ -33,7 +33,7 @@ const StackedColumnChart = () => {
             height: 350,
             stacked: true,
             toolbar: {
-                show: true
+                show: false
             },
         },
         responsive: [
@@ -76,18 +76,8 @@ const StackedColumnChart = () => {
             show: 'false',
             borderColor: 'transparent', //removes grid lines
         },
-        colors:[ '#b3b3b3','#00a9fb','#2236ef', '#9be7f2','#0098b6'  ], //arrays used to set the color to black and red respectively
-        dataLabels: {
-            enabled: true,
-            // formatter: function (val) {
-            //   return val + "%";
-            // },
-            // offsetY: -20,
-            // style: {
-            //   fontSize: '12px',
-            //   colors: ["#304758"]
-            // }
-          },
+        colors:[ '#b3b3b3','#00a9fb','#2236ef', '#9be7f2','#0098b6'  ],
+       
         tooltip: {
             enabled: true,
             enabledOnSeries: undefined,
@@ -107,34 +97,27 @@ const StackedColumnChart = () => {
             floating: false,
             fontSize: '14px',
             fontFamily: 'Helvetica, Arial',
-            // style: {
-            //     fontSize: '12px',
-            //     fontFamily: undefined,
-            // },
             fontWeight: 400,
             inverseOrder: true,
         },
         plotOptions: {
             bar: {
-              horizontal: false,
-              rangeBarGroupRows: true, // set to true to enable rangeBar
-              rangeBarOverlap: false, // set to false to have rangeBar side-by-side
               dataLabels: {
-                position: 'center',
-                formatter: function(val, opts) {
-                  let seriesIndex = opts.seriesIndex;
-                  let cumulativeVal = 0;
-                  for(let i = 0; i <= seriesIndex; i++) {
-                    cumulativeVal += opts.w.globals.stackedSeriesTotals[i][opts.dataPointIndex];
+                enabled: true,
+                total: {
+                    enabled: true,
+                    style: {
+                      fontSize: '13px',
+                      fontWeight: 900
+                    }
                   }
-                  return cumulativeVal;
-                },
-            }}}
+            },
+           }},
+           
     });
 
     return (
         <div id="chart">
-            <p>asheini</p>
             <ReactApexChart options={options} series={series} type="bar" height={500} width={700} />
         </div>
     );
