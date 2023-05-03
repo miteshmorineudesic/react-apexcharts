@@ -5,23 +5,23 @@ const StackedColumnChart = () => {
     const [series] = useState([
         {
             name: 'Others',
-            data: [32, 50, 140]
+            data: [62.5, 97.5, 275]
         },
         {
             name: 'Inorganic',
-            data: [15, 25, 65],
+            data: [18, 27.5, 55],
         },
         {
             name: 'Pet-Chem',
-            data: [51, 90, 350]
+            data: [51, 95, 360]
         },
         {
             name: 'Fertilizers',
-            data: [18, 25, 50]
+            data: [15, 25, 67.5]
         },
         {
             name: 'Specialty',
-            data: [60, 95, 250]
+            data: [32, 60 , 165 ]
         },
     ]);
   
@@ -104,6 +104,7 @@ const StackedColumnChart = () => {
             bar: {
               dataLabels: {
                 enabled: true,
+                
                 total: {
                     enabled: true,
                     style: {
