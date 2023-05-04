@@ -113,22 +113,9 @@ const StackedColumnChart = () => {
                     fontSize: '13px',
                     fontWeight: 900,
                     fontWeight: 'bold',
+                    margin:'20px',
                     color: 'black'
                   },
-                  background: {
-                    enabled: true,
-                    foreColor: 'black',
-                    borderColor: 'black',
-                    borderWidth: 1,
-                    borderRadius: 4,
-                    opacity: 1,
-                    padding: {
-                      left: 8,
-                      right: 8,
-                      top: 4,
-                      bottom: 4
-                    }
-                  }
                 }
               }
             }
@@ -137,10 +124,6 @@ const StackedColumnChart = () => {
         dataLabels: {
             enabled: true,
             enabledOnSeries: undefined,
-            formatter: function (val, opts) {
-                return val
-            },
-            textAnchor: 'middle',
             style: {
                 fontSize: '14px',
                 fontFamily: 'Helvetica, Arial, sans-serif',
@@ -154,25 +137,8 @@ const StackedColumnChart = () => {
                 borderWidth: 0,
                 borderColor: '#fff',
                 opacity: 0.9,
-                dropShadow: {
-                    enabled: false,
-                    top: 1,
-                    left: 1,
-                    blur: 1,
-                    color: '#000',
-                    opacity: 0.45
-                }
             },
-            dropShadow: {
-                enabled: false,
-                top: 1,
-                left: 1,
-                blur: 1,
-                color: '#ffffff',
-                opacity: 0.45
-            }
         }
-
     });
 
     return (
